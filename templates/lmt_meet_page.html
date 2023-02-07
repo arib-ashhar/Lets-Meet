@@ -1,8 +1,30 @@
 {% extends "base_template.html" %}
+{% load static %}
 {% block title %}
-    lets_meet
+    Lets Meet
 {% endblock title %}
+{% block content %}
+<main>
+    <section id="meet-name-wrapper">
+        <p>Meet Name: <span id="meet-name"></span></p>
+    </section>
 
-{% block contents %}
-    <p>MAIN PAGE HERE</p>
-{% endblock contents %}
+    <section id="video-streams"></section>
+
+    <section id="controls-wrapper">
+        <div class="icon-wrapper">
+            <img class="control-icon" id="mic-btn" src="{% static 'images/microphone.png' %}" />
+        </div>
+
+        <div class="icon-wrapper">
+            <img class="control-icon" id="leave-btn" src="{% static 'images/leave.png' %}" />
+        </div>
+
+        <div class="icon-wrapper">
+            <img class="control-icon" id="camera-btn" src="{% static 'images/camera.png' %}" />
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.16.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/meet.js' %}"></script>
+{% endblock content %}
